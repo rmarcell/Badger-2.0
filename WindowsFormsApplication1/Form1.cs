@@ -31,7 +31,7 @@ namespace WindowsFormsApplication1
             const int BadgeWidth  = 255;  // 90mm
             const int BadgeHeight = 156;  // 55mm
 
-            graph.DrawRectangle(new Pen(Color.Black, 1), new XRect(x, y, BadgeWidth, BadgeHeight));
+            graph.DrawRectangle(new Pen(Color.FromArgb(10,0,0,0), 1), new XRect(x, y, BadgeWidth, BadgeHeight));
             XPdfFontOptions pdfFondOptions = new XPdfFontOptions(PdfFontEncoding.Unicode, PdfFontEmbedding.Always);
 
             // TODO: fonts are temporary
