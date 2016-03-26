@@ -28,16 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_browseXls = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.XLS_location = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.elozetes = new System.Windows.Forms.TabPage();
+            this.lbl_progress = new System.Windows.Forms.Label();
+            this.picBox_spinner = new System.Windows.Forms.PictureBox();
+            this.btn_browsePdfPath = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txt_pdfPath = new System.Windows.Forms.TextBox();
             this.logo_Location = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_browseImg = new System.Windows.Forms.Button();
             this.potlolagos = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox17 = new System.Windows.Forms.TextBox();
@@ -83,20 +88,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.backgroundwoker = new System.ComponentModel.BackgroundWorker();
             this.tabControl1.SuspendLayout();
             this.elozetes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_spinner)).BeginInit();
             this.potlolagos.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btn_browseXls
             // 
-            this.button1.Location = new System.Drawing.Point(429, 50);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "XLS(X) input";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_browseXls.Location = new System.Drawing.Point(429, 50);
+            this.btn_browseXls.Name = "btn_browseXls";
+            this.btn_browseXls.Size = new System.Drawing.Size(75, 23);
+            this.btn_browseXls.TabIndex = 0;
+            this.btn_browseXls.Text = "XLS(X) input";
+            this.btn_browseXls.UseVisualStyleBackColor = true;
+            this.btn_browseXls.Click += new System.EventHandler(this.btn_browseXls_Click);
             // 
             // openFileDialog1
             // 
@@ -120,13 +127,13 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(224, 178);
+            this.button2.Location = new System.Drawing.Point(116, 169);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(307, 23);
             this.button2.TabIndex = 3;
             this.button2.Text = "Generálás";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.btn_generate_Click);
             // 
             // tabControl1
             // 
@@ -140,13 +147,18 @@
             // 
             // elozetes
             // 
+            this.elozetes.Controls.Add(this.lbl_progress);
+            this.elozetes.Controls.Add(this.picBox_spinner);
+            this.elozetes.Controls.Add(this.btn_browsePdfPath);
+            this.elozetes.Controls.Add(this.label23);
+            this.elozetes.Controls.Add(this.txt_pdfPath);
             this.elozetes.Controls.Add(this.logo_Location);
             this.elozetes.Controls.Add(this.label18);
-            this.elozetes.Controls.Add(this.button4);
+            this.elozetes.Controls.Add(this.btn_browseImg);
             this.elozetes.Controls.Add(this.XLS_location);
             this.elozetes.Controls.Add(this.label1);
             this.elozetes.Controls.Add(this.button2);
-            this.elozetes.Controls.Add(this.button1);
+            this.elozetes.Controls.Add(this.btn_browseXls);
             this.elozetes.Location = new System.Drawing.Point(4, 22);
             this.elozetes.Name = "elozetes";
             this.elozetes.Padding = new System.Windows.Forms.Padding(3);
@@ -154,6 +166,51 @@
             this.elozetes.TabIndex = 0;
             this.elozetes.Text = "Előzetes generálás";
             this.elozetes.UseVisualStyleBackColor = true;
+            // 
+            // lbl_progress
+            // 
+            this.lbl_progress.AutoSize = true;
+            this.lbl_progress.Location = new System.Drawing.Point(209, 337);
+            this.lbl_progress.Name = "lbl_progress";
+            this.lbl_progress.Size = new System.Drawing.Size(0, 13);
+            this.lbl_progress.TabIndex = 12;
+            this.lbl_progress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // picBox_spinner
+            // 
+            this.picBox_spinner.Location = new System.Drawing.Point(212, 218);
+            this.picBox_spinner.Name = "picBox_spinner";
+            this.picBox_spinner.Size = new System.Drawing.Size(120, 100);
+            this.picBox_spinner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picBox_spinner.TabIndex = 11;
+            this.picBox_spinner.TabStop = false;
+            this.picBox_spinner.Visible = false;
+            // 
+            // btn_browsePdfPath
+            // 
+            this.btn_browsePdfPath.Location = new System.Drawing.Point(429, 126);
+            this.btn_browsePdfPath.Name = "btn_browsePdfPath";
+            this.btn_browsePdfPath.Size = new System.Drawing.Size(75, 23);
+            this.btn_browsePdfPath.TabIndex = 6;
+            this.btn_browsePdfPath.Text = "Tallózás";
+            this.btn_browsePdfPath.UseVisualStyleBackColor = true;
+            this.btn_browsePdfPath.Click += new System.EventHandler(this.btn_browsePdfPath_Click_1);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(42, 131);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(68, 13);
+            this.label23.TabIndex = 9;
+            this.label23.Text = "PDF kimenet";
+            // 
+            // txt_pdfPath
+            // 
+            this.txt_pdfPath.Location = new System.Drawing.Point(116, 128);
+            this.txt_pdfPath.Name = "txt_pdfPath";
+            this.txt_pdfPath.Size = new System.Drawing.Size(307, 20);
+            this.txt_pdfPath.TabIndex = 8;
             // 
             // logo_Location
             // 
@@ -171,15 +228,15 @@
             this.label18.TabIndex = 7;
             this.label18.Text = "Bemeneti kép";
             // 
-            // button4
+            // btn_browseImg
             // 
-            this.button4.Location = new System.Drawing.Point(429, 89);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Kép input";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btn_browseImg.Location = new System.Drawing.Point(429, 89);
+            this.btn_browseImg.Name = "btn_browseImg";
+            this.btn_browseImg.Size = new System.Drawing.Size(75, 23);
+            this.btn_browseImg.TabIndex = 5;
+            this.btn_browseImg.Text = "Kép input";
+            this.btn_browseImg.UseVisualStyleBackColor = true;
+            this.btn_browseImg.Click += new System.EventHandler(this.button4_Click);
             // 
             // potlolagos
             // 
@@ -243,7 +300,6 @@
             this.button3.TabIndex = 43;
             this.button3.Text = "Törlés";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // textBox17
             // 
@@ -337,7 +393,6 @@
             this.button5.TabIndex = 32;
             this.button5.Text = "Nyomtat";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // textBox9
             // 
@@ -606,6 +661,7 @@
             this.tabControl1.ResumeLayout(false);
             this.elozetes.ResumeLayout(false);
             this.elozetes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_spinner)).EndInit();
             this.potlolagos.ResumeLayout(false);
             this.potlolagos.PerformLayout();
             this.ResumeLayout(false);
@@ -614,7 +670,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_browseXls;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox XLS_location;
         private System.Windows.Forms.Label label1;
@@ -656,7 +712,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox logo_Location;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_browseImg;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
@@ -669,6 +725,12 @@
         private System.Windows.Forms.TextBox textBox20;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox txt_pdfPath;
+        private System.Windows.Forms.Button btn_browsePdfPath;
+        private System.Windows.Forms.PictureBox picBox_spinner;
+        private System.ComponentModel.BackgroundWorker backgroundwoker;
+        private System.Windows.Forms.Label lbl_progress;
     }
 }
 

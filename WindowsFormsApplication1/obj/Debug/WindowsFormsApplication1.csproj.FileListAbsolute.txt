@@ -14,3 +14,19 @@ C:\Users\xxxx\documents\visual studio 2015\Projects\WindowsFormsApplication1\Win
 C:\Users\xxxx\documents\visual studio 2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\PdfSharp.Charting.xml
 C:\Users\xxxx\documents\visual studio 2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\de\PdfSharp.resources.dll
 C:\Users\xxxx\documents\visual studio 2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\de\PdfSharp.Charting.resources.dll
+C:\Users\erbal\Documents\GitHub\Badger-2.0\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\erbal\Documents\GitHub\Badger-2.0\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+C:\Users\erbal\Documents\GitHub\Badger-2.0\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\erbal\Documents\GitHub\Badger-2.0\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\erbal\Documents\GitHub\Badger-2.0\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\erbal\Documents\GitHub\Badger-2.0\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\erbal\Documents\GitHub\Badger-2.0\WindowsFormsApplication1\bin\Debug\PdfSharp.Charting.dll
+C:\Users\erbal\Documents\GitHub\Badger-2.0\WindowsFormsApplication1\bin\Debug\PdfSharp.dll
+C:\Users\erbal\Documents\GitHub\Badger-2.0\WindowsFormsApplication1\bin\Debug\PdfSharp.xml
+C:\Users\erbal\Documents\GitHub\Badger-2.0\WindowsFormsApplication1\bin\Debug\PdfSharp.Charting.xml
+C:\Users\erbal\Documents\GitHub\Badger-2.0\WindowsFormsApplication1\bin\Debug\de\PdfSharp.resources.dll
+C:\Users\erbal\Documents\GitHub\Badger-2.0\WindowsFormsApplication1\bin\Debug\de\PdfSharp.Charting.resources.dll
+C:\Users\erbal\Documents\GitHub\Badger-2.0\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\erbal\Documents\GitHub\Badger-2.0\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\erbal\Documents\GitHub\Badger-2.0\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\erbal\Documents\GitHub\Badger-2.0\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
