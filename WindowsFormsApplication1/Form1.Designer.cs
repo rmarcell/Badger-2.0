@@ -170,7 +170,7 @@
             // lbl_progress
             // 
             this.lbl_progress.AutoSize = true;
-            this.lbl_progress.Location = new System.Drawing.Point(209, 337);
+            this.lbl_progress.Location = new System.Drawing.Point(209, 330);
             this.lbl_progress.Name = "lbl_progress";
             this.lbl_progress.Size = new System.Drawing.Size(0, 13);
             this.lbl_progress.TabIndex = 12;

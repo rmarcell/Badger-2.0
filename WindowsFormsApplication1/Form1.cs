@@ -118,6 +118,21 @@ namespace WindowsFormsApplication1
         {
             picBox_spinner.Visible = false;
             button2.Enabled = true;
+            lbl_progress.ForeColor = Color.DarkGreen;
+            lbl_progress.Font = new System.Drawing.Font(lbl_progress.Font.Name, 24F);
+            lbl_progress.Text = "Kész!";
+
+            Timer doneSignTmr = new Timer();
+            doneSignTmr.Interval = 5000;
+
+            doneSignTmr.Tick += new EventHandler(showDoneSign);
+            doneSignTmr.Start();
+        }
+
+        private void showDoneSign(object sender, EventArgs e)
+        {
+            lbl_progress.Font = new System.Drawing.Font(lbl_progress.Font.Name, 8.5F);
+            lbl_progress.ForeColor = Color.Black;
             lbl_progress.Text = "";
         }
 
