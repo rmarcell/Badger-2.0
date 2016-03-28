@@ -5,6 +5,7 @@ using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,19 +23,23 @@ namespace Badger
         private string logoLocation = null;
         private Form parent = null;
         private List<Badge> badgeData = null;
+        private string generatedPDFPath= null;
+        private bool openAfterGenerate = false;
 
-        public BadgeCreator(Form Parent, string xlsPath, string pdfSavePath, string logoPath)
+        public BadgeCreator(Form Parent, string xlsPath, string pdfSavePath, string logoPath, bool openPDF)
         {
             this.XLSlocation = xlsPath;
             this.pdfSaveLocation = pdfSavePath;
             this.logoLocation = logoPath;
             this.parent = Parent;
+            this.openAfterGenerate = openPDF;
         }
 
-        public BadgeCreator(Form Parent, List<Badge> badgeData)
+        public BadgeCreator(Form Parent, List<Badge> badgeData, bool openPDF)
         {
             this.parent = Parent;
             this.badgeData = badgeData;
+            this.openAfterGenerate = openPDF;
         }
 
         public void StartGenerate()
@@ -50,6 +55,10 @@ namespace Badger
         private void GenerateFinished(object sender, RunWorkerCompletedEventArgs e)
         {
             ((MainForm)this.parent).showSpinner(false);
+
+            if (this.openAfterGenerate == true)
+            { Process.Start(this.generatedPDFPath); }
+            
         }
 
         private void GenerateBadges(object sender, DoWorkEventArgs e)
@@ -202,11 +211,13 @@ namespace Badger
 
             if (this.pdfSaveLocation != null)
             {
-                pdfDocument.Save(this.pdfSaveLocation + "\\generatedBadges_" + DateTime.Now.TimeOfDay.Hours + DateTime.Now.TimeOfDay.Minutes + ".pdf");
+                this.generatedPDFPath = this.pdfSaveLocation + "\\generatedBadges_" + DateTime.Now.TimeOfDay.Hours + DateTime.Now.TimeOfDay.Minutes + ".pdf";
+                pdfDocument.Save(this.generatedPDFPath);
             }
             else
             {
-                pdfDocument.Save("generatedBadges_" + DateTime.Now.TimeOfDay.Hours + DateTime.Now.TimeOfDay.Minutes + ".pdf");
+                this.generatedPDFPath = "generatedBadges_" + DateTime.Now.TimeOfDay.Hours + DateTime.Now.TimeOfDay.Minutes + ".pdf";
+                pdfDocument.Save(this.generatedPDFPath);
             }
         }
 

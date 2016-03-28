@@ -47,11 +47,12 @@
             this.lst_newBadges = new System.Windows.Forms.ListView();
             this.btn_addBadge = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.btn_openBadges = new System.Windows.Forms.Button();
             this.btn_print = new System.Windows.Forms.Button();
             this.txt_pos = new System.Windows.Forms.TextBox();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.backgroundwoker = new System.ComponentModel.BackgroundWorker();
+            this.cb_openPDF_singleBadge = new System.Windows.Forms.CheckBox();
+            this.cb_openPDF_fromXLS = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.elozetes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_spinner)).BeginInit();
@@ -110,6 +111,7 @@
             // 
             // elozetes
             // 
+            this.elozetes.Controls.Add(this.cb_openPDF_fromXLS);
             this.elozetes.Controls.Add(this.lbl_progress);
             this.elozetes.Controls.Add(this.picBox_spinner);
             this.elozetes.Controls.Add(this.btn_browsePdfPath);
@@ -203,10 +205,10 @@
             // 
             // potlolagos
             // 
+            this.potlolagos.Controls.Add(this.cb_openPDF_singleBadge);
             this.potlolagos.Controls.Add(this.lst_newBadges);
             this.potlolagos.Controls.Add(this.btn_addBadge);
             this.potlolagos.Controls.Add(this.checkBox1);
-            this.potlolagos.Controls.Add(this.btn_openBadges);
             this.potlolagos.Controls.Add(this.btn_print);
             this.potlolagos.Controls.Add(this.txt_pos);
             this.potlolagos.Controls.Add(this.txt_name);
@@ -247,18 +249,9 @@
             this.checkBox1.Text = "Színek invertálása";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // btn_openBadges
-            // 
-            this.btn_openBadges.Location = new System.Drawing.Point(116, 353);
-            this.btn_openBadges.Name = "btn_openBadges";
-            this.btn_openBadges.Size = new System.Drawing.Size(75, 23);
-            this.btn_openBadges.TabIndex = 33;
-            this.btn_openBadges.Text = "Megnyit";
-            this.btn_openBadges.UseVisualStyleBackColor = true;            
-            // 
             // btn_print
             // 
-            this.btn_print.Location = new System.Drawing.Point(35, 353);
+            this.btn_print.Location = new System.Drawing.Point(429, 48);
             this.btn_print.Name = "btn_print";
             this.btn_print.Size = new System.Drawing.Size(75, 23);
             this.btn_print.TabIndex = 32;
@@ -292,6 +285,26 @@
             // 
             this.backgroundwoker.WorkerReportsProgress = true;
             this.backgroundwoker.WorkerSupportsCancellation = true;
+            // 
+            // cb_openPDF_singleBadge
+            // 
+            this.cb_openPDF_singleBadge.AutoSize = true;
+            this.cb_openPDF_singleBadge.Location = new System.Drawing.Point(35, 329);
+            this.cb_openPDF_singleBadge.Name = "cb_openPDF_singleBadge";
+            this.cb_openPDF_singleBadge.Size = new System.Drawing.Size(103, 17);
+            this.cb_openPDF_singleBadge.TabIndex = 38;
+            this.cb_openPDF_singleBadge.Text = "PDF megnyitása";
+            this.cb_openPDF_singleBadge.UseVisualStyleBackColor = true;
+            // 
+            // cb_openPDF_fromXLS
+            // 
+            this.cb_openPDF_fromXLS.AutoSize = true;
+            this.cb_openPDF_fromXLS.Location = new System.Drawing.Point(46, 218);
+            this.cb_openPDF_fromXLS.Name = "cb_openPDF_fromXLS";
+            this.cb_openPDF_fromXLS.Size = new System.Drawing.Size(103, 17);
+            this.cb_openPDF_fromXLS.TabIndex = 13;
+            this.cb_openPDF_fromXLS.Text = "PDF megnyitása";
+            this.cb_openPDF_fromXLS.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -327,7 +340,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btn_browseImg;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button btn_openBadges;
         private System.Windows.Forms.Button btn_print;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox txt_pdfPath;
@@ -337,6 +349,8 @@
         private System.Windows.Forms.Label lbl_progress;
         private System.Windows.Forms.Button btn_addBadge;
         private System.Windows.Forms.ListView lst_newBadges;
+        private System.Windows.Forms.CheckBox cb_openPDF_singleBadge;
+        private System.Windows.Forms.CheckBox cb_openPDF_fromXLS;
     }
 }
 

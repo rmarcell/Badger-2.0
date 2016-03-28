@@ -76,7 +76,12 @@ namespace Badger
 
         private void btn_generate_Click(object sender, EventArgs e)
         {
-            BadgeCreator bc = new BadgeCreator(this, this.XLS_location.Text, this.txt_pdfPath.Text, this.logo_Location.Text);
+            bool openPDF = false;
+            
+            if (this.cb_openPDF_fromXLS.CheckState == CheckState.Checked)
+            { openPDF = true; }
+
+            BadgeCreator bc = new BadgeCreator(this, this.XLS_location.Text, this.txt_pdfPath.Text, this.logo_Location.Text, openPDF);
             bc.StartGenerate();
         }
 
@@ -168,6 +173,7 @@ namespace Badger
         {
             List<Badge> newBadges= new List<Badge>();
             BadgeCreator bc = null;
+            bool openPDF = false; 
             txt_name.Text = "Név";
             txt_name.ForeColor = Color.Gray;
             txt_pos.Text = "Poszt";
@@ -182,7 +188,10 @@ namespace Badger
                 newBadges.Add(badge);
             }
 
-            bc = new BadgeCreator(this, newBadges);
+            if (this.cb_openPDF_singleBadge.CheckState == CheckState.Checked)
+            { openPDF = true; }
+
+            bc = new BadgeCreator(this, newBadges, openPDF);
             bc.StartGenerate();
             
         }
