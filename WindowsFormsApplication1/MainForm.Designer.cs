@@ -53,6 +53,7 @@
             this.backgroundwoker = new System.ComponentModel.BackgroundWorker();
             this.cb_openPDF_singleBadge = new System.Windows.Forms.CheckBox();
             this.cb_openPDF_fromXLS = new System.Windows.Forms.CheckBox();
+            this.btn_deleteItem = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.elozetes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_spinner)).BeginInit();
@@ -205,6 +206,7 @@
             // 
             // potlolagos
             // 
+            this.potlolagos.Controls.Add(this.btn_deleteItem);
             this.potlolagos.Controls.Add(this.cb_openPDF_singleBadge);
             this.potlolagos.Controls.Add(this.lst_newBadges);
             this.potlolagos.Controls.Add(this.btn_addBadge);
@@ -251,7 +253,7 @@
             // 
             // btn_print
             // 
-            this.btn_print.Location = new System.Drawing.Point(429, 48);
+            this.btn_print.Location = new System.Drawing.Point(429, 77);
             this.btn_print.Name = "btn_print";
             this.btn_print.Size = new System.Drawing.Size(75, 23);
             this.btn_print.TabIndex = 32;
@@ -306,6 +308,16 @@
             this.cb_openPDF_fromXLS.Text = "PDF megnyitása";
             this.cb_openPDF_fromXLS.UseVisualStyleBackColor = true;
             // 
+            // btn_deleteItem
+            // 
+            this.btn_deleteItem.Location = new System.Drawing.Point(429, 48);
+            this.btn_deleteItem.Name = "btn_deleteItem";
+            this.btn_deleteItem.Size = new System.Drawing.Size(75, 23);
+            this.btn_deleteItem.TabIndex = 39;
+            this.btn_deleteItem.Text = "Eltávolít";
+            this.btn_deleteItem.UseVisualStyleBackColor = true;
+            this.btn_deleteItem.Click += new System.EventHandler(this.btn_deleteItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,6 +363,7 @@
         private System.Windows.Forms.ListView lst_newBadges;
         private System.Windows.Forms.CheckBox cb_openPDF_singleBadge;
         private System.Windows.Forms.CheckBox cb_openPDF_fromXLS;
+        private System.Windows.Forms.Button btn_deleteItem;
     }
 }
 

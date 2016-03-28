@@ -195,5 +195,13 @@ namespace Badger
             bc.StartGenerate();
             
         }
+
+        private void btn_deleteItem_Click(object sender, EventArgs e)
+        {
+            foreach(ListViewItem singleItem in this.lst_newBadges.SelectedItems)
+            {
+                this.lst_newBadges.Items.Remove(singleItem);
+            }
+        }
     }
 }
