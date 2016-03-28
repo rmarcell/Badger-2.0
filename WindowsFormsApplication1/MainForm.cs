@@ -203,5 +203,16 @@ namespace Badger
                 this.lst_newBadges.Items.Remove(singleItem);
             }
         }
+
+        private void lst_newBadges_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Delete)
+            {
+                foreach (ListViewItem singleItem in this.lst_newBadges.SelectedItems)
+                {
+                    this.lst_newBadges.Items.Remove(singleItem);
+                }
+            }
+        }
     }
 }

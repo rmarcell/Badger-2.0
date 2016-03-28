@@ -230,6 +230,7 @@
             this.lst_newBadges.TabIndex = 37;
             this.lst_newBadges.UseCompatibleStateImageBehavior = false;
             this.lst_newBadges.View = System.Windows.Forms.View.Details;
+            this.lst_newBadges.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lst_newBadges_KeyDown);
             // 
             // btn_addBadge
             // 
